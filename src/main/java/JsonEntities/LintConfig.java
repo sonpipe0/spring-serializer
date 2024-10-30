@@ -1,15 +1,20 @@
 package JsonEntities;
 
+import com.google.gson.annotations.SerializedName;
+
 public class LintConfig {
-    private String identifierFormat;
+    private String identifier_format;
+
+    @SerializedName("mandatory-variable-or-literal-in-println")
     private boolean restrictPrintln;
+    @SerializedName("mandatory-variable-or-literal-in-readInput")
     private boolean restrictReadInput;
 
     public LintConfig() {
     }
 
     public String getIdentifierFormat() {
-        return this.identifierFormat;
+        return this.identifier_format;
     }
 
     public boolean isRestrictPrintln() {
@@ -21,7 +26,7 @@ public class LintConfig {
     }
 
     public void setIdentifierFormat(String identifierFormat) {
-        this.identifierFormat = identifierFormat;
+        this.identifier_format = identifierFormat;
     }
 
     public void setRestrictPrintln(boolean restrictPrintln) {
