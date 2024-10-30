@@ -12,7 +12,6 @@ java {
     targetCompatibility = JavaVersion.VERSION_21
 
     withSourcesJar()
-    withJavadocJar()
 }
 
 repositories {

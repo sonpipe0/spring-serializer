@@ -23,4 +23,4 @@ jobs:
           arguments: publish
         env:
           USERNAME: ${{ github.repository_owner }}
-          PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.GHCR_PAT }}
