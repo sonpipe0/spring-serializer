@@ -8,7 +8,7 @@ public class LintingConfigDTO {
     public LintingConfigDTO() {
     }
 
-    public @NotBlank(message = "identifier format cannot be blank") IdentifierFormat getIdentifierFormat() {
+    public @NotNull(message = "identifier format cannot be null") IdentifierFormat getIdentifierFormat() {
         return this.identifierFormat;
     }
 
