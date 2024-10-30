@@ -1,7 +1,6 @@
 package DTO;
 
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 public class LintingConfigDTO {
 
@@ -20,7 +19,7 @@ public class LintingConfigDTO {
         return this.restrictReadInput;
     }
 
-    public void setIdentifierFormat(@NotBlank(message = "identifier format cannot be blank") IdentifierFormat identifierFormat) {
+    public void setIdentifierFormat(@NotNull(message = "identifier format cannot be null") IdentifierFormat identifierFormat) {
         this.identifierFormat = identifierFormat;
     }
 
@@ -37,7 +36,7 @@ public class LintingConfigDTO {
         CAMEL_CASE,
     }
 
-    @NotBlank(message = "identifier format cannot be blank")
+    @NotNull(message = "identifier format cannot be null")
     private IdentifierFormat identifierFormat;
 
     @NotNull(message = "Restrict println cannot be null")

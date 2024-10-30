@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "org.printScript.microservices"
-version = "1.0-SNAPSHOT"
+version = "1.0.${System.getenv("GITHUB_RUN_NUMBER")}" // Dynamic version
 
 
 java {
