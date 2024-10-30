@@ -15,19 +15,18 @@ import java.util.Set;
 
 public class FormatSerializer {
 
-    public InputStream serialize(FormatConfigDTO formatConfigDTO) {
+    public String serialize(FormatConfigDTO formatConfigDTO) {
         FormatConfig formatConfig = getFormatConfig(formatConfigDTO);
 
         Gson gson = new Gson();
         String json = gson.toJson(formatConfig);
-        return new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8)); 
+        return json;
     }
 
-    public FormatConfigDTO deserialize(InputStream inputStream) {
+    public FormatConfigDTO deserialize(String json) {
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
         Gson gson = new Gson();
-        InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
-        FormatConfig formatConfig = gson.fromJson(reader, FormatConfig.class);
+        FormatConfig formatConfig = gson.fromJson(json, FormatConfig.class);
         FormatConfigDTO formatConfigDTO = getFormatConfigDTO(formatConfig);
 
         Set<ConstraintViolation<FormatConfigDTO>> violations = validator.validate(formatConfigDTO);

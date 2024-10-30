@@ -7,15 +7,11 @@ import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
 public class LintSerializer {
 
-    public InputStream serialize(LintingConfigDTO lintConfigDTO) {
+    public String serialize(LintingConfigDTO lintConfigDTO) {
         LintConfig lintConfig = getLintConfig(lintConfigDTO);
         Validator validation = Validation.buildDefaultValidatorFactory().getValidator();
         Set<ConstraintViolation<LintingConfigDTO>> violations = validation.validate(lintConfigDTO);
@@ -24,12 +20,12 @@ public class LintSerializer {
         }
         Gson gson = new Gson();
         String json = gson.toJson(lintConfig);
-        return new ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8));
+        return json;
     }
 
-    public LintingConfigDTO deserialize(InputStream inputStream) {
+    public LintingConfigDTO deserialize(String json) {
         Gson gson = new Gson();
-        LintConfig lintConfig = gson.fromJson(new InputStreamReader(inputStream, StandardCharsets.UTF_8), LintConfig.class);
+        LintConfig lintConfig = gson.fromJson(json, LintConfig.class);
         return getLintingConfigDTO(lintConfig);
     }
 
