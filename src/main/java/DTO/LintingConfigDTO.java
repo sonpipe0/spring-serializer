@@ -3,14 +3,34 @@ package DTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@NoArgsConstructor
-@Getter
-@Setter
 public class LintingConfigDTO {
+
+    public LintingConfigDTO() {
+    }
+
+    public @NotBlank(message = "identifier format cannot be blank") IdentifierFormat getIdentifierFormat() {
+        return this.identifierFormat;
+    }
+
+    public @NotNull(message = "Restrict println cannot be null") boolean isRestrictPrintln() {
+        return this.restrictPrintln;
+    }
+
+    public @NotNull(message = "Restrict read input cannot be null") boolean isRestrictReadInput() {
+        return this.restrictReadInput;
+    }
+
+    public void setIdentifierFormat(@NotBlank(message = "identifier format cannot be blank") IdentifierFormat identifierFormat) {
+        this.identifierFormat = identifierFormat;
+    }
+
+    public void setRestrictPrintln(@NotNull(message = "Restrict println cannot be null") boolean restrictPrintln) {
+        this.restrictPrintln = restrictPrintln;
+    }
+
+    public void setRestrictReadInput(@NotNull(message = "Restrict read input cannot be null") boolean restrictReadInput) {
+        this.restrictReadInput = restrictReadInput;
+    }
 
     public enum IdentifierFormat {
         SNAKE_CASE,

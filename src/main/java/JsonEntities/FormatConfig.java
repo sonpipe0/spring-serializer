@@ -1,11 +1,7 @@
 package JsonEntities;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
 
-@Setter
-@Getter
 public class FormatConfig {
 
     // Getters and setters for each field
@@ -56,4 +52,91 @@ public class FormatConfig {
         this.indentInsideBraces = 2;
     }
 
+    public boolean isSpaceBeforeColon() {
+        return this.spaceBeforeColon;
+    }
+
+    public boolean isSpaceAfterColon() {
+        return this.spaceAfterColon;
+    }
+
+    public boolean isSpaceAroundEquals() {
+        return this.spaceAroundEquals;
+    }
+
+    public boolean isNoSpaceAroundEquals() {
+        return this.noSpaceAroundEquals;
+    }
+
+    public int getLinesBeforePrintln() {
+        return this.linesBeforePrintln;
+    }
+
+    public boolean isNewLineAfterSemiColon() {
+        return this.newLineAfterSemiColon;
+    }
+
+    public boolean isEnforceSpacingBetweenTokens() {
+        return this.enforceSpacingBetweenTokens;
+    }
+
+    public boolean isEnforceSpaceSurroundingOperators() {
+        return this.enforceSpaceSurroundingOperators;
+    }
+
+    public boolean isIfBraceBelowLine() {
+        return this.ifBraceBelowLine;
+    }
+
+    public boolean isIfBraceSameLine() {
+        return this.ifBraceSameLine;
+    }
+
+    public int getIndentInsideBraces() {
+        return this.indentInsideBraces;
+    }
+
+    public void setSpaceBeforeColon(boolean spaceBeforeColon) {
+        this.spaceBeforeColon = spaceBeforeColon;
+    }
+
+    public void setSpaceAfterColon(boolean spaceAfterColon) {
+        this.spaceAfterColon = spaceAfterColon;
+    }
+
+    public void setSpaceAroundEquals(boolean spaceAroundEquals) {
+        this.spaceAroundEquals = spaceAroundEquals;
+    }
+
+    public void setNoSpaceAroundEquals(boolean noSpaceAroundEquals) {
+        this.noSpaceAroundEquals = noSpaceAroundEquals;
+    }
+
+    public void setLinesBeforePrintln(int linesBeforePrintln) {
+        this.linesBeforePrintln = linesBeforePrintln;
+    }
+
+    public void setNewLineAfterSemiColon(boolean newLineAfterSemiColon) {
+        this.newLineAfterSemiColon = newLineAfterSemiColon;
+    }
+
+    public void setEnforceSpacingBetweenTokens(boolean enforceSpacingBetweenTokens) {
+        this.enforceSpacingBetweenTokens = enforceSpacingBetweenTokens;
+    }
+
+    public void setEnforceSpaceSurroundingOperators(boolean enforceSpaceSurroundingOperators) {
+        this.enforceSpaceSurroundingOperators = enforceSpaceSurroundingOperators;
+    }
+
+    public void setIfBraceBelowLine(boolean ifBraceBelowLine) {
+        this.ifBraceBelowLine = ifBraceBelowLine;
+    }
+
+    public void setIfBraceSameLine(boolean ifBraceSameLine) {
+        this.ifBraceSameLine = ifBraceSameLine;
+    }
+
+    public void setIndentInsideBraces(int indentInsideBraces) {
+        this.indentInsideBraces = indentInsideBraces;
+    }
 }

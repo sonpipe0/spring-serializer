@@ -12,6 +12,7 @@ java {
     targetCompatibility = JavaVersion.VERSION_21
 
     withSourcesJar()
+    withJavadocJar()
 }
 
 repositories {
@@ -22,8 +23,6 @@ dependencies {
     implementation("org.apache.tomcat.embed:tomcat-embed-el:10.1.30")
     implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
     implementation("com.google.code.gson:gson:2.10.1")
-    compileOnly("org.projectlombok:lombok:1.18.30")
-    annotationProcessor("org.projectlombok:lombok:1.18.30")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
