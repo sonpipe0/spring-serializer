@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.17.2")
     implementation("org.apache.tomcat.embed:tomcat-embed-el:10.1.30")
     implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
     implementation("com.google.code.gson:gson:2.10.1")
