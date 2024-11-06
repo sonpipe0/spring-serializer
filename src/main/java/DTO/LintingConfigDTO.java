@@ -1,6 +1,7 @@
 package DTO;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotNull;
 public class LintingConfigDTO {
 
@@ -37,6 +38,7 @@ public class LintingConfigDTO {
     }
 
     @NotNull(message = "identifier format cannot be null")
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private IdentifierFormat identifierFormat;
 
     @NotNull(message = "Restrict println cannot be null")
